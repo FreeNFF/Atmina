@@ -8,20 +8,40 @@ from tkinter import messagebox
 gameWindow=Tk()
 gameWindow.title("Atmiņas spēle")
 
+#########################################################################################################
+
+myImg1=ImageTk.PhotoImage(Image.open("1.jpg"))
+myImg2=ImageTk.PhotoImage(Image.open("2.jpg"))
+myImg3=ImageTk.PhotoImage(Image.open("3.png"))
+myImg4=ImageTk.PhotoImage(Image.open("4.png"))
+myImg5=ImageTk.PhotoImage(Image.open("5.jpg"))
+myImg6=ImageTk.PhotoImage(Image.open("6.png"))
+
+
+
+#Fona attēls:
+bgImg=ImageTk.PhotoImage(Image.open("7.jpg").resize((200,200)))#attēlu saspiešanas metode
+
+#Attēla izmērs
+
+
 ##########################################################################################################
 
-btn0=Button(width=20, height=10)#sāk no 0, jo saistās ar saraksta elementu indeksāciju
-btn1=Button(width=20, height=10)
-btn2=Button(width=20, height=10)
-btn3=Button(width=20, height=10)
-btn4=Button(width=20, height=10)
-btn5=Button(width=20, height=10)
-btn6=Button(width=20, height=10)
-btn7=Button(width=20, height=10)
-btn8=Button(width=20, height=10)
-btn9=Button(width=20, height=10)
-btn10=Button(width=20, height=10)
-btn11=Button(width=20, height=10)
+btn0=Button(width=200,height=200,image=bgImg)#sāk no 0, jo saistās ar saraksta elementu indeksāciju
+btn1=Button(width=200,height=200,image=bgImg)
+btn2=Button(width=200,height=200,image=bgImg)
+btn3=Button(width=200,height=200,image=bgImg)
+btn4=Button(width=200,height=200,image=bgImg)
+btn5=Button(width=200,height=200,image=bgImg)
+btn6=Button(width=200,height=200,image=bgImg)
+btn7=Button(width=200,height=200,image=bgImg)
+btn8=Button(width=200,height=200,image=bgImg)
+btn9=Button(width=200,height=200,image=bgImg)
+btn10=Button(width=200,height=200,image=bgImg)
+btn11=Button(width=200,height=200,image=bgImg)
+
+##########################################################################################################
+
 
 
 ##########################################################################################################
