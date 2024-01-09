@@ -30,29 +30,33 @@ bgImg=ImageTk.PhotoImage(Image.open("7.jpg").resize((360,250)))#attēlu saspieš
 
 ##############################################################################################################3
 
-ImageList=[myImg1, myImg1, myImg2, myImg2, myImg3, myImg3, myImg4,myImg4, myImg5,myImg5, myImg6, myImg6]
+ImageList=[myImg1, myImg1, myImg2, myImg2, myImg3, myImg3, myImg4, myImg4, myImg5, myImg5, myImg6, myImg6]
 
 random.shuffle(ImageList) #attēli jāsajauc(attēli tiek sajaukti nejaušā secībā)
 
 ###################################################################################################################
 
 def btnClick(btn,number):
-    global count, correctAnswers, answers, answer_dict
+    global count, correctAnswers, answers, answer_dict,winner
     if btn["image"] == "pyimage7" and count<2:#pēc sistēmas nosauc šādi'
         btn["image"]=ImageList[number]
-        count=+1#viena rūtiņa atklāta
+        count+=1#viena rūtiņa atklāta
         answers.append(number)#pievieno pie atbildēm
-        answer_dict[btn]=ImageList(number)
+        answer_dict[btn]=ImageList[number]
     if len(answers)==2:#ja atvērtas divas kartītes
-        if ImageList[answers[0]==ImageList[answers[1]]]:#salīdzina attēlus, kas saglabāts vārdņīcā ar attēlu sarakstā
+        if ImageList[answers[0]]==ImageList[answers[1]]:#salīdzina attēlus, kas saglabāts vārdņīcā ar attēlu sarakstā
             for key in answer_dict:
                 key["state"]=DISABLED
-        if correctAnswers==2:
-            messagebox.showinfo("Vienādi attēli", "Esi uzminējis")
-    else:
-        messagebox.showinfo("Vienādi attēli","Neuzminēji")
-        for key in answer_dict:
-            key["image"]="pyimage7"
+            correctAnswers+=2
+            if correctAnswers==2:
+                messagebox.showinfo("Vienādi attēli", "Esi uzminējis")
+                correctAnswers=0
+            if correctAnswers==6:
+                messagebox.showinfo("Vienādi attēli","Tu uzvarēji! Vai vēlies spēlēt vēreiz?")
+        else:
+            messagebox.showinfo("Vienādi attēli","Neuzminēji")
+            for key in answer_dict:
+                key["image"]="pyimage7"
         count=0
         answers=[]
         answer_dict={}
