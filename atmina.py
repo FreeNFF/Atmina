@@ -152,12 +152,12 @@ galvenaIzvele.add_command(label="Par programmu",command=infoLogs) # pievieno maz
 
 
 #Komandas
-opcijas.add_command(label="Jauna spēle", command=reset)
-opcijas.add_command(label="Iziet", command=gameWindow.quit)
+opcijas.add_command(label="Jauna spēle", command=reset)#pievieno kommandu, priekš atvēršanas jaunajam logam
+opcijas.add_command(label="Iziet", command=gameWindow.quit)#iziet no loga
 
 ##########################################################################################################
 
-btn0.grid(row=0,column=0)
+btn0.grid(row=0,column=0)#pogu novietojums
 btn1.grid(row=0,column=1)
 btn2.grid(row=0,column=2)
 btn3.grid(row=0,column=3)
