@@ -27,7 +27,8 @@ myImg6=ImageTk.PhotoImage(Image.open("6.png").resize((200,200)))
 
 
 #Fona attēls:
-bgImg=ImageTk.PhotoImage(Image.open("7.jpg").resize((360,250)))#attēlu saspiešanas metode
+bgImg=ImageTk.PhotoImage(Image.open("7.png").resize((270,260)))#attēlu saspiešanas metode
+
 
 ##############################################################################################################3
 
@@ -100,7 +101,7 @@ def btnClick(btn,number):
         count=0
         answers=[]
         answer_dict={}
-    if winner==6:
+    if winner==6:#ja ir 6 attēli atminēti, tad parāda, ka esi vinējis
         messagebox.showinfo("Vienādi attēli","Tu uzvarēji! Vai vēlies spēlēt vēlteiz?")
         reset()
     return
